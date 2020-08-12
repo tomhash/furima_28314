@@ -72,7 +72,6 @@
 | building         | string  | ----------- |
 | phone_number     | integer | null: false |
 
-
 ### Association
 
 - belong_to :users
