@@ -34,7 +34,7 @@
 | shipping_type   | string     | null: false                    |
 | preparation_day | string     | null: false                    |
 | price           | integer    | null: false                    |
-| buyer_id        | references | null: false ,foreign_key: true |
+| user_id         | references | null: false ,foreign_key: true |
 ### Association
 
 - belongs_to :user
@@ -54,15 +54,15 @@
 
 ## destinations テーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------- | ----------- |
-| postal_code      | integer | null: false |
-| prefecture       | string  | null: false |
-| city             | string  | null: false |
-| address          | string  | null: false |
-| building         | string  | ----------- |
-| phone_number     | integer | null: false |
-
+| Column           | Type       | Options                        |
+| ---------------- | -------    | ------------------------------ |
+| postal_code      | integer    | null: false                    |
+| prefecture       | string     | null: false                    |
+| city             | string     | null: false                    |
+| address          | string     | null: false                    |
+| building         | string     | ------------------------------ |
+| phone_number     | integer    | null: false                    |
+| buyer            | references | null: false ,foreign_key: true |
 ### Association
 
 
