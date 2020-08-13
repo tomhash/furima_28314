@@ -27,11 +27,11 @@
 | item_url        | string     | null: false                    |
 | name            | string     | null: false                    |
 | description     | string     | null: false                    |
-| category        | string     | null: false                    |
-| item_condition  | string     | null: false                    |
-| ship_from       | string     | null: false                    |
-| shipping_type   | string     | null: false                    |
-| preparation_day | string     | null: false                    |
+| category        | integer    | null: false                    |
+| item_condition  | integer    | null: false                    |
+| ship_from       | integer    | null: false                    |
+| shipping_type   | integer    | null: false                    |
+| preparation_day | integer    | null: false                    |
 | price           | integer    | null: false                    |
 | user            | references | null: false ,foreign_key: true |
 ### Association
@@ -60,7 +60,7 @@
 | city             | string     | null: false                    |
 | address          | string     | null: false                    |
 | building         | string     | ------------------------------ |
-| phone_number     | integer    | null: false                    |
+| phone_number     | string     | null: false                    |
 | buyer            | references | null: false ,foreign_key: true |
 ### Association
 
