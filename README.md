@@ -18,7 +18,6 @@
 
 - has_many :items
 - has_many :buyers
-- has_one  :destination
 
 
 ## items テーブル
@@ -34,7 +33,7 @@
 | shipping_type   | string     | null: false                    |
 | preparation_day | string     | null: false                    |
 | price           | integer    | null: false                    |
-| user_id         | references | null: false ,foreign_key: true |
+| user            | references | null: false ,foreign_key: true |
 ### Association
 
 - belongs_to :user
@@ -44,8 +43,8 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| user_id | references | null: false ,foreign_key: true |
-| item_id | references | null: false ,foreign_key: true |
+| user    | references | null: false ,foreign_key: true |
+| item    | references | null: false ,foreign_key: true |
 
 - belongs_to :user
 - belongs_to :item
