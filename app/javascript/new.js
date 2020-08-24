@@ -1,6 +1,6 @@
 function priceCulc(){
-   
-   const priceInput = document.getElementById("price") 
+   console.log("test")
+   const priceInput = document.getElementById("price")
     priceInput.addEventListener('change', function(event){
       event.preventDefault();
       const price = document.getElementById("price").value;
