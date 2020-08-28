@@ -5,7 +5,7 @@ class Pay
   with_options presence: true do
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/}
     validates :phone_number, format: { with: /\A\d{11}\z/}
-    validates :city, :address, :building
+    validates :city, :address
     validates :ship_from_id,  presence: true
   end
   validates :token,  presence: true

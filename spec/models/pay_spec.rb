@@ -9,6 +9,12 @@ RSpec.describe Pay, type: :model do
         it 'postal_code、phone_number、city、address、building、ship_from_id、tokenが存在すれば購入処理ができること' do
           expect(@pay).to be_valid
         end
+        it 'buildingが存在しなくても購入処理ができること' do
+          @pay.building = nil
+          @pay.valid?
+          expect(@pay).to be_valid
+        end
+
       
       end
       context '購入処理がうまくいかない時' do
