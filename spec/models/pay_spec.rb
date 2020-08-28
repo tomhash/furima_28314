@@ -50,7 +50,6 @@ RSpec.describe Pay, type: :model do
         end
         it 'tokenが空だと購入処理ができないこと' do
           @pay.token = nil
-          binding.pry
           @pay.valid?
           expect(@pay.errors.full_messages).to include("Token can't be blank")
           

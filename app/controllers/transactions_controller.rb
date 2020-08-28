@@ -9,6 +9,7 @@ class TransactionsController < ApplicationController
     @pay = Pay.new(pay_params)
     if @pay.valid?
       pay_item
+      @pay.save
       return redirect_to root_path
     else
       render 'index'
