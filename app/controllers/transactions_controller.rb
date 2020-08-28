@@ -7,7 +7,7 @@ class TransactionsController < ApplicationController
 
   def create
     @pay = Pay.new(pay_params)
-    if @pay.save
+    if @pay.valid?
       pay_item
       return redirect_to root_path
     else

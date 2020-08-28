@@ -6,7 +6,7 @@ RSpec.describe Pay, type: :model do
         @pay = FactoryBot.build(:pay)
       end
       context '購入処理がうまくいく時' do
-        it 'postal_code、phone_number、city、address、building、ship_from_idが存在すれば購入処理ができること' do
+        it 'postal_code、phone_number、city、address、building、ship_from_id、tokenが存在すれば購入処理ができること' do
           expect(@pay).to be_valid
         end
       
@@ -20,7 +20,7 @@ RSpec.describe Pay, type: :model do
         it 'postal_codeにハイフンが存在しないと購入処理ができないこと' do
           @pay.postal_code = "6691358"
           @pay.valid?
-          expect(@pay.errors.full_messages).to include( "Postal code is invalid")
+          expect(@pay.errors.full_messages).to include("Postal code is invalid")
         end
         it 'phone_numberが空だと購入処理ができないこと' do
           @pay.phone_number = nil
@@ -46,8 +46,14 @@ RSpec.describe Pay, type: :model do
         it 'ship_from_idが空だと購入処理ができないこと' do
           @pay.ship_from_id = nil
           @pay.valid?
-          binding.pry
           expect(@pay.errors.full_messages).to include("Ship from can't be blank")
+        end
+        it 'tokenが空だと購入処理ができないこと' do
+          @pay.token = nil
+          binding.pry
+          @pay.valid?
+          expect(@pay.errors.full_messages).to include("Token can't be blank")
+          
         end
         
       end
