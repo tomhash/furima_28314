@@ -18,14 +18,14 @@ class TransactionsController < ApplicationController
   private
 
   def pay_params
-    params.permit( :postal_code, :phone_number, :city, :address, :building, :ship_from_id).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.permit( :postal_code, :phone_number, :city, :address, :building, :ship_from_id,:item_id,:token).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"] 
     Payjp::Charge.create(
       amount: @item.price,  
-      card: params[:token],    
+      card: pay_params[:token],    
       currency:'jpy'                
     )
   end
