@@ -8,7 +8,7 @@ RSpec.describe Item, type: :model do
     end
     
     context '出品ができる時' do
-      it "image, name, description, category_id, item_condition, preparation_day, ship_from, shipping_type,priceが存在すれば出品できること" do
+      it "image, name, description, category, item_condition, preparation_day, ship_from, shipping_type,priceが存在すれば出品できること" do
         expect(@item).to be_valid
       end
       
@@ -31,30 +31,30 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Discription can't be blank")
       end
-      it "category_idが空では出品できないこと" do
+      it "categoryが空では出品できないこと" do
         @item.category_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category_id can't be blank")
+        expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it "item_conditionが空では出品できないこと"do
         @item.item_condition = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item_condition can't be blank")
+        expect(@item.errors.full_messages).to include("Item condition can't be blank")
       end
       it "preparation_dayが空では出品できないこと" do
         @item.preparation_day= nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Preparation_day cant be blank")
+        expect(@item.errors.full_messages).to include("Preparation day cant be blank")
       end
       it "ship_fromが空では出品できないこと" do
         @item.ship_from= nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Ship_from can't be blank")
+        expect(@item.errors.full_messages).to include("Ship from can't be blank")
       end
       it "shipping_typeが空では出品できないこと" do
         @item.shipping_type= nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping_type can't be blank")
+        expect(@item.errors.full_messages).to include("Shipping type can't be blank")
       end  
       it "priceが空では出品できないこと" do
         @item.price= nil

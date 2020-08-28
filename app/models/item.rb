@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     belongs_to_active_hash :shipping_type
  end
    validates :price,  presence: true, inclusion: { in: 300..9999999 }
-  
+   validates :ship_from_id,  presence: true
    belongs_to :user
    has_one_attached :image
    has_one :buyer

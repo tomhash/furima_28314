@@ -1,5 +1,4 @@
-function priceCulc(){
-   console.log("test")
+function priceCalculator(){
    const priceInput = document.getElementById("price")
     priceInput.addEventListener('change', function(event){
       event.preventDefault();
@@ -16,4 +15,4 @@ function priceCulc(){
 
 
 }
-window.addEventListener('load',priceCulc);
+window.addEventListener('load',priceCalculator);
