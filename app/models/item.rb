@@ -6,7 +6,7 @@ class Item < ApplicationRecord
     belongs_to_active_hash :preparation_day
     belongs_to_active_hash :ship_from
     belongs_to_active_hash :shipping_type
-    validates :name, :description 
+    validates :name, :description,:image
  end
   with_options numericality: { other_than: 1 }  do
     belongs_to_active_hash :category 
