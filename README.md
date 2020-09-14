@@ -56,7 +56,7 @@
 | Column           | Type       | Options                        |
 | ---------------- | -------    | ------------------------------ |
 | postal_code      | integer    | null: false                    |
-| ship_from        | integer     | null: false                    |
+| ship_from        | integer     | null: false                   |
 | city             | string     | null: false                    |
 | address          | string     | null: false                    |
 | building         | string     | ------------------------------ |
